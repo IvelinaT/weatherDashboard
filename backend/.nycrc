@@ -1,0 +1,20 @@
+{
+  "all": true,
+  "check-coverage": true,
+  "reporter": [
+    "html",
+    "text",
+    "json-summary"
+  ],
+  "statements": 45,
+  "lines": 40,
+  "branches": 5,
+  "functions": 35,
+  "exclude": [
+    "config",
+    "coverage",
+    "dist",
+    "node_modules",
+    "test/**/*.js"
+  ]
+}

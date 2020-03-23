@@ -1,0 +1,21 @@
+{
+    "extends": [
+      "standard",
+      "plugin:promise/recommended"
+    ],
+    "plugins": [
+      "standard",
+      "promise"
+    ],
+    "env": {
+      "node": true
+    },
+    "globals": {
+      "fetch": true,
+      "expect": true,
+      "sinon": true,
+      "sandbox": true,
+      "FormData": true
+    }
+  }
+  
