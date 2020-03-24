@@ -1,4 +1,4 @@
-# weatherDashboard
+# Weather Dashboard
 
 ## Getting Started
 
@@ -26,7 +26,10 @@ The service should be up and running on port 3100.
 
 ## Setup the database
 The project uses Sequalize Database [Migrations](https://sequelize.org/master/manual/migrations.html)
-Navigate to project's backend folder
+
+Navigate to project's backend folder in CLI.
+
+Run the following commands to create database, create user table and fill it with some data
 ```
 npx sequelize-cli db:create
 npx sequelize-cli db:migrate 
