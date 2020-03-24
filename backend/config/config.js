@@ -5,7 +5,7 @@ module.exports = {
   weatherApi: {
     host: process.env.APP_WEATHER_API_HOST || 'api.openweathermap.org',
     version: process.env.APP_WEATHER_API_VERSION || '2.5',
-    apiKey: process.env.APP_WEATHER_API_KEY || '6760c671ea648820075ff935c580c8d8'
+    apiKey: process.env.APP_WEATHER_API_KEY || 'f7be39e3e3631dee1a8ac30afde3e069'
   },
   development: {
     username: 'root',

@@ -9,7 +9,9 @@ export default function (state = initialState, action) {
     case FORECAST_SUCCESS:
       return {
         ...state,
-        forecast: action.payload
+        forecast: action.payload,
+        error: false,
+        loading: false
       }
     case FORECAST_ERROR:
       return {
