@@ -24,6 +24,14 @@ NODE_ENV=development npm start
 
 The service should be up and running on port 3100.
 
+## Setup the database
+The project uses Sequalize Database [Migrations](https://sequelize.org/master/manual/migrations.html)
+Navigate to project's backend folder
+```
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate 
+npx sequelize-cli db:seed:all
+```
 ## Running the backend tests
 Navigate to project's backend folder
 ### Run all unit and system tests
@@ -36,6 +44,7 @@ npm test
 
 ```
 npm run test:coverage
+```
 ## Updates to the Database
 
 The project uses Sequalize Database [Migrations](https://sequelize.org/master/manual/migrations.html)
