@@ -1,7 +1,9 @@
-import { FORECAST_SUCCESS, FORECAST_ERROR } from '../types'
+import { FORECAST_SUCCESS, FORECAST_ERROR, FORECAST_LOADING } from '../types'
 
 const initialState = {
-  forecast: {}
+  weatherForecast: {},
+  error: false,
+  loading: true
 }
 
 export default function (state = initialState, action) {
@@ -9,15 +11,19 @@ export default function (state = initialState, action) {
     case FORECAST_SUCCESS:
       return {
         ...state,
-        forecast: action.payload,
+        weatherForecast: action.payload,
         error: false,
         loading: false
       }
     case FORECAST_ERROR:
       return {
         ...state,
-        error: true,
-        loading: false
+        error: true
+      }
+    case FORECAST_LOADING:
+      return {
+        ...state,
+        loading: true
       }
     default:
       return state
