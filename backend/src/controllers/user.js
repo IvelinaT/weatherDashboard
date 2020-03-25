@@ -9,6 +9,7 @@ user.getAllUsers = async () => {
   try {
     return await database.user.findAll()
   } catch (error) {
+    statusCode = 500
     console.log(error, 'Failed to get all users')
     throw error
   }
@@ -23,6 +24,7 @@ user.getUserById = async (req) => {
     }
     return selectedUser
   } catch (error) {
+    statusCode = 401
     console.log(error, `Failed to get user by id ${id}`)
     throw error
   }
@@ -37,6 +39,7 @@ user.getUserByEmail = async (req) => {
     }
     return selectedUser
   } catch (error) {
+    statusCode = 500
     console.log(error, `Failed to get user by email ${email}`)
     throw error
   }
@@ -60,6 +63,7 @@ user.createUser = async (req) => {
     }
     return await database.user.create(options)
   } catch (error) {
+    statusCode = 500
     console.log(error, 'Failed to create user')
     throw error
   }
@@ -87,6 +91,7 @@ user.updateUser = async (req) => {
     })
     return await database.user.update({ id })
   } catch (error) {
+    statusCode = 500
     console.log(error, `Failed to update user with id ${id}`)
     throw error
   }
@@ -104,6 +109,7 @@ user.deleteUser = async (req) => {
 
     return await database.user.delete({ id })
   } catch (error) {
+    statusCode = 500
     console.log(error, `Failed to delete user with id ${id}`)
     throw error
   }
@@ -142,6 +148,7 @@ user.loginUser = async (req) => {
 
     return token
   } catch (error) {
+    statusCode = 500
     console.log(error, `Failed to authenticate user with email ${email}`)
     throw error
   }
@@ -158,6 +165,7 @@ user.registerUser = async (req) => {
 
     return token
   } catch (error) {
+    statusCode = 500
     console.log(error, 'Failed to register user')
     throw error
   }
