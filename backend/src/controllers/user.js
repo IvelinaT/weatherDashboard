@@ -139,7 +139,7 @@ user.loginUser = async (req) => {
       throw new NotFoundError('Authentication failed. Wrong password.')
     }
     const token = user.generateAccessToken(selectedUser)
-    // findByIdAndUpdate
+
     return token
   } catch (error) {
     console.log(error, `Failed to authenticate user with email ${email}`)
@@ -154,8 +154,8 @@ user.registerUser = async (req) => {
       throw new NotFoundError('Requested User Not Found')
     }
 
-    const token = user.generateAccessToken(selectedUser)
-    // findByIdAndUpdate
+    const token = await user.generateAccessToken(selectedUser)
+
     return token
   } catch (error) {
     console.log(error, 'Failed to register user')
