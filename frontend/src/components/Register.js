@@ -9,7 +9,8 @@ class Register extends Component {
   constructor () {
     super()
     this.state = {
-      name: '',
+      givenName: '',
+      familyName: '',
       email: '',
       password: '',
       password_confirm: '',
@@ -29,7 +30,7 @@ class Register extends Component {
     e.preventDefault()
     const user = {
       givenName: this.state.givenName,
-      familyNAme: this.state.familyNAme,
+      familyName: this.state.familyName,
       email: this.state.email,
       password: this.state.password,
       password_confirm: this.state.password_confirm

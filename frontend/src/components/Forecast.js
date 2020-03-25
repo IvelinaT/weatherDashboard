@@ -11,7 +11,6 @@ class Forecast extends Component {
 
   render () {
     const { weatherForecast, loading } = this.props.forecast
-    console.log(loading)
     if (loading) {
       return (
         <div className="loading-message">
