@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getForecast } from '../actions/forecast'
 import ForecastList from './ForecastList'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 class Forecast extends Component {
   componentDidMount () {
     this.props.getForecast()
   }
 
   render () {
-    const { weatherForecast, loading } = this.props.forecast
+    const { weatherForecast, loading, error } = this.props.forecast
     if (loading) {
       return (
         <div className="loading-message">
@@ -19,7 +19,7 @@ class Forecast extends Component {
           <div className="sub-loading">Please be patient. Due to API limitations, requests must be routed through a proxy.</div>
         </div>
       )
-    } else if (weatherForecast.cod === '404') {
+    } else if (error || weatherForecast.cod === '404') {
       return (
         <div className="container text-center">
           <div className="error-message">

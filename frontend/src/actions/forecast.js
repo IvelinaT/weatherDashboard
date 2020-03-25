@@ -13,7 +13,10 @@ export const getForecast = () => dispatch => {
 
   instance.get('/api/forecast')
     .then(res => {
-      const { forecast } = res.data
+      const { forecast, status } = res.data
+        if(status !== 200) {
+          return dispatch(fetchWeatherForecastError(res.data))
+        }
       dispatch(getWeatherForecastSuccess(forecast))
     })
     .catch(err => {

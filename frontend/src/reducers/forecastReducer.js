@@ -18,12 +18,14 @@ export default function (state = initialState, action) {
     case FORECAST_ERROR:
       return {
         ...state,
-        error: true
+        error: true,
+        loading: false
       }
     case FORECAST_LOADING:
       return {
         ...state,
-        loading: true
+        loading: true,
+        error: false
       }
     default:
       return state
